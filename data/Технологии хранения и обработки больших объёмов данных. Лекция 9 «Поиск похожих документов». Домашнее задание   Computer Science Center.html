@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru " dir="ltr">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <META NAME="AUTHOR" CONTENT="uWorld.com.ua">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+    if(!window.jsMath){window.jsMath={}}
+    jsMath.Easy={
+      root:"/sites/all/libraries/jsMath",
+      scale:120,
+      autoload:1,
+      processSlashParens:1,
+      processSlashBrackets:1,
+      processLaTeXenvironments:1,
+      processDoubleDollars:1,
+      processSingleDollars:1,
+      fixEscapedDollars:1,
+      doubleDollarsAreInLine:0,
+      allowDisableTag:0,
+      customDelimiters:['[math]','[/math]','[display]','[/display]'],
+      allowDoubleClicks:1,
+      showFontWarnings:0,
+      method:"Process",
+      loadFiles:["extensions/AMSmath.js", "extensions/AMSsymbols.js"],
+      loadFonts:[],
+      allowGlobal:1,
+      noImageFonts:0};</script>
+    <script type="text/javascript" src="/sites/all/libraries/jsMath/jsMath-easy-load.js"></script>
+<link rel="shortcut icon" href="/misc/favicon.ico" type="image/x-icon" />
+    <title>
+    Технологии хранения и обработки больших объёмов данных. Лекция 9 «Поиск похожих документов». Домашнее задание  | Computer Science Center    </title>
+  <link type="text/css" rel="stylesheet" media="all" href="/modules/node/node.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/defaults.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system-menus.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/user/user.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/cck/theme/content-module.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/colorbox/styles/default/colorbox_default_style.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/date/date.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/date/date_popup/themes/datepicker.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/date/date_popup/themes/jquery.timeentry.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/filefield/filefield.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/geshifilter/geshifilter.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/quiz/quiz.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/cck/modules/fieldgroup/fieldgroup.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/views/css/views.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/views_nivo_slider/js/nivo-slider.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/views_nivo_slider/styles/default/custom-nivo-slider.css?r" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/uworld/css/style.css?r" />
+  <script type="text/javascript" src="/sites/all/modules/jquery_update/replace/jquery.min.js?r"></script>
+<script type="text/javascript" src="/misc/drupal.js?r"></script>
+<script type="text/javascript" src="/sites/default/files/languages/ru_1758764e0d967af358d91d8eef7aae9c.js?r"></script>
+<script type="text/javascript" src="/sites/all/libraries/colorbox/colorbox/jquery.colorbox-min.js?r"></script>
+<script type="text/javascript" src="/sites/all/modules/colorbox/js/colorbox.js?r"></script>
+<script type="text/javascript" src="/sites/all/modules/colorbox/styles/default/colorbox_default_style.js?r"></script>
+<script type="text/javascript" src="/misc/tableheader.js?r"></script>
+<script type="text/javascript" src="/modules/subscriptions/subscriptions_tableselect.js?r"></script>
+<script type="text/javascript" src="/misc/collapse.js?r"></script>
+<script type="text/javascript" src="/sites/all/modules/views_nivo_slider/js/jquery.nivo.slider.pack.js?r"></script>
+<script type="text/javascript" src="/sites/all/modules/views_nivo_slider/js/views_nivo_slider.js?r"></script>
+<script type="text/javascript" src="/sites/all/themes/uworld/js/DD_belatedPNG_0.0.8a-min.js?r"></script>
+<script type="text/javascript" src="/sites/all/themes/uworld/js/script.js?r"></script>
+<script type="text/javascript" src="/sites/all/themes/uworld/js/jslatex.js?r"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "colorbox": { "transition": "elastic", "speed": 350, "opacity": "0.85", "slideshow": false, "slideshowAuto": false, "slideshowSpeed": 2500, "slideshowStart": "", "slideshowStop": "", "current": "{current} of {total}", "previous": "« Prev", "next": "Next »", "close": "Close", "overlayClose": true, "maxWidth": "100%", "maxHeight": "100%" }, "views_nivo_slider": { "views-nivo-slider-slider-block_1": { "startSlide": 0, "effect": "fade", "slices": 15, "animSpeed": 500, "pauseTime": 3000, "directionNav": true, "directionNavHide": true, "controlNav": true, "controlNavThumbs": false, "controlNavThumbsFromRel": false, "keyboardNav": false, "pauseOnHover": false, "manualAdvance": false, "captionOpacity": 0.8 } } });
+//--><!]]>
+</script>
+
+  </head>
+  <body>
+    <!-- body -->
+    <div id="top">
+      <!-- header -->
+      <div id="header">
+        <div class="logo">
+          <a href="http://compscicenter.ru"></a>
+        </div>
+        <!--menu-->
+        <div id="menu">
+                    <div id="topmenu">
+			<ul class="menu"><li class="leaf first"><a href="/about"><span>О центре</span></a></li>
+<li class="leaf"><a href="/program"><span>Программа</span></a></li>
+<li class="leaf"><a href="/admission"><span>Как поступить</span></a></li>
+<li class="leaf"><a href="/feedback"><span>Обратная связь</span></a></li>
+<li class="leaf"><a href="/user"><span>Вход</span></a></li>
+<li class="leaf last"><a href="http://compscicenter.ru/application" target="_blank"><span>Заявка</span></a></li>
+</ul>          </div>
+                  </div>
+                <div id="admin_menu">
+        	<div>  <h2>mialer@yandex.ru</h2>
+ <ul class="menu"><li class="leaf first"><a href="/users/mialeryandexru"><span>Мои профиль</span></a></li>
+<li class="leaf"><a href="/logout"><span>Выйти</span></a></li>
+<li class="leaf last"><a href="/tracker"><span>Последние публикации</span></a></li>
+</ul> </div>
+         </div>
+        	  		<div class="zayavka"></div>
+	           <!--end of menu-->
+      </div>
+      <!-- end of header -->
+            <!-- content -->
+      <div id="body" class="clearfix">
+
+                <div id="leftMenu">
+          <div id="leftMenu-bottom">
+            
+<ul class="menu"><li class="expanded first"><a href="/program"><span>Общая программа</span></a><ul class="menu"><li class="leaf first"><a href="/program/cs"><span>Computer Science</span></a></li>
+<li class="leaf"><a href="/program/dm"><span>Data Mining</span></a></li>
+<li class="leaf last"><a href="/program/se"><span>Software Engineering</span></a></li>
+</ul></li>
+<li class="leaf"><a href="/teachers"><span>Преподаватели</span></a></li>
+<li class="collapsed"><a href="/program/practice"><span>НИР/Практика</span></a></li>
+<li class="leaf last"><a href="/program/all/schedule"><span>Расписание</span></a></li>
+</ul>
+          </div>
+        </div>
+                <div id="content"  >
+                              <h2><a href="/program/course/bigdata2013">Технологии хранения и обработки больших объёмов данных</a>. <a href="/program/lecture/7329">Лекция 9 «Поиск похожих документов»</a>. Домашнее задание </h2>                              		  		                      
+
+<div id="node-7488" class="node node-unpublished">
+
+
+
+
+
+  <div class="content clear-block">
+  	<div class="field"><b>Срок отправки: </b><span class="date-display-start">24.04.2013, 16:30</span><span class="date-display-separator"> - </span><span class="date-display-end">06.05.2013, 00:00</span></div>
+    <p>Нахождение похожих документов в текстовом корпусе, состоящим из новостных сообщений.</p>
+<p>Тестовый корпус состоит из каталога, содержащего некоторое количество текстовых файлов. В каждом файле в простом тексте записано некоторое новостное сообщение. Идентификатором документа является название файла. Программа должна принимать на вход название каталога и выводить пары идентификаторов документов и степень их схожести:</p>
+<p>python news.py corpus/<br />
+1 5 0.99<br />
+1 13 0.95<br />
+5 13 0.97<br />
+2 8 0.86<br />
+2 5 0.32</p>
+<p>Если требуется, можно использовать отдельные программы (например mapreduce) и координировать их действия shell скриптом</p>
+<p>Корпус можно получить самостоятельно, взяв текст сегодняшних новостей с новостных сайтов, ссылки на которые присутствуют  на news.yandex.ru</p>
+<p>Оценка в диапазоне 1..5 зависит от качества и масштабируемости результата. При одинаковом качестве, в одном конце спектра будет попарное сравнение всех документов на 1 процессоре, а в другом -- LSH в виде конвейера из map-reduce'ов. масштабирующихся на 1000 процессоров</p>
+        <div class="c-b"></div>
+        
+	<h3>Присланные домашние задания</h3>
+
+	<ul class="list-items homework-list">
+	 
+	
+		<li><a href="/program/response/7508">Торган Юлия</a>, 05.05.2013, 23:59				</li>
+	 
+	
+		<li><a href="/program/response/7507">Марчук Александр</a>, 04.05.2013, 20:27				</li>
+		
+	</ul>
+	<div class="pager">
+			</div>
+<div class="c-b"></div>	  </div>
+
+
+</div>
+
+
+        </div>
+
+        <!-- end of content -->
+      </div>
+      <!-- end of body -->
+      <!-- footer -->
+      <div id="bottom">
+                <!-- end of footer -->
+        <div class="copyright">
+          <div>  <h2></h2>
+ <a href="/">Computer Science Center</a>
+Все права защищены, 2011-13 г. </div>
+         </div>
+        <div class="social">
+          <div>  <h2></h2>
+ <a href="http://vkontakte.ru/compscicenter" target="_blank"><img alt="" src="http://compscicenter.ru/sites/all/themes/uworld/image/icon_vk.gif"></a>
+<a href="https://www.facebook.com/CSCenter" target="_blank"><img alt="" src="http://compscicenter.ru/sites/all/themes/uworld/image/icon_fbn.gif"></a>
+<a href="http://twitter.com/#Compscicenter" target="_blank"><img alt="" src="http://compscicenter.ru/sites/all/themes/uworld/image/icon_tw.gif"></a>
+<a href="http://cscenter.livejournal.com/" target="_blank">
+<img alt="" src="http://compscicenter.ru/sites/all/themes/uworld/image/lj_ico.png"></a>
+<a href="http://compscicenter.ru/rss" target="_blank">
+<img alt="" src="http://compscicenter.ru/sites/all/themes/uworld/image/rss.png"></a> </div>
+         </div>
+        <div class="find">
+          <form action="/program/assignment/7488"  accept-charset="UTF-8" method="post" id="search-theme-form">
+<div><input type="hidden" id="startsear" value="Поиск по сайту" />
+  <input class="search-txt" type="text" onclick="if(this.value == document.getElementById('startsear').value) this.value = '';" value="Поиск по сайту" maxlength="30" name="search_theme_form" id="find" size="15" /> 
+  <input type="hidden" name="form_token" id="edit-search-theme-form-form-token" value="bc8110f62948c0cd570cfb5a5171fcd0"  />
+  <input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
+
+</div></form>
+        </div>
+      </div>
+    </div>
+<script type="text/javascript">
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-22557749-1']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type =
+'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+ })();
+ $(document).ready(function() {
+      $(".latex").latex();
+});
+
+</script>
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter17581804 = new Ya.Metrika({id:17581804,
+enableAll: true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") +
+"//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/17581804"
+style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+  </body>
+</html>
