@@ -1,6 +1,7 @@
 1. parse html docs, find main text, split to shingles, get int32 hash from shingle
 2. hashing docs buckets with location sensitive hashing
 3. find similarity with min-hash
+
 all in map-reduce (with bottleneck in 2->3 step, storing all docs in 1 server, see main.py)
 
 pip install beautifulsoup4
